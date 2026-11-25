@@ -1,0 +1,14 @@
+{"at":0,"kind":"rule","record":{"scope":"platform","scope_id":"all","revision":1,"dataset":"action","from":0,"until":30,"values":{"silence":false,"period":5,"unit":"ms"}}}
+{"at":0,"kind":"agent","record":{"node":"x","site":"s","experiment":"e","units":["ms"],"fields":["period"]}}
+{"at":0,"kind":"agent","record":{"node":"y","site":"s","experiment":"e","units":["ms"],"fields":["period"]}}
+{"at":1,"kind":"schedule","record":{"id":"take","dataset":"action","start":5,"end":20,"required":["x","y"]}}
+{"at":2,"kind":"get","record":{"node":"x","schedule":"take"}}
+{"at":2,"kind":"get","record":{"node":"y","schedule":"take"}}
+{"at":3,"kind":"ready","record":{"node":"x","schedule":"take","view":1}}
+{"at":4,"kind":"ready","record":{"node":"y","schedule":"take","view":1}}
+{"at":5,"kind":"picked","record":{"node":"x","schedule":"take","view":1}}
+{"at":6,"kind":"rule","record":{"scope":"platform","scope_id":"all","revision":2,"dataset":"action","from":6,"until":30,"values":{"silence":true}}}
+{"at":7,"kind":"ready","record":{"node":"y","schedule":"take","view":1}}
+{"at":8,"kind":"inspect","record":{"schedule":"take"}}
+{"at":9,"kind":"stop","record":{"node":"x","schedule":"take","prefix":"p1"}}
+{"at":10,"kind":"inspect","record":{"schedule":"take"}}

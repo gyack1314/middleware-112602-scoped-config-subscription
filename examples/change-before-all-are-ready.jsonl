@@ -1,0 +1,12 @@
+{"at":0,"kind":"rule","record":{"scope":"platform","scope_id":"all","revision":1,"dataset":"pose","from":0,"until":30,"values":{"silence":false,"period":5,"unit":"ms"}}}
+{"at":0,"kind":"agent","record":{"node":"x","site":"s","experiment":"e","units":["ms","us"],"fields":["period"]}}
+{"at":0,"kind":"agent","record":{"node":"y","site":"s","experiment":"e","units":["ms"],"fields":["period"]}}
+{"at":1,"kind":"schedule","record":{"id":"dual","dataset":"pose","start":6,"end":25,"required":["x","y"]}}
+{"at":2,"kind":"get","record":{"node":"x","schedule":"dual"}}
+{"at":3,"kind":"ready","record":{"node":"x","schedule":"dual","view":1}}
+{"at":4,"kind":"rule","record":{"scope":"site","scope_id":"s","revision":1,"dataset":"pose","from":4,"until":16,"values":{"period":2,"unit":"us"}}}
+{"at":5,"kind":"get","record":{"node":"y","schedule":"dual"}}
+{"at":6,"kind":"ready","record":{"node":"y","schedule":"dual","view":1}}
+{"at":7,"kind":"inspect","record":{"schedule":"dual"}}
+{"at":17,"kind":"get","record":{"node":"y","schedule":"dual"}}
+{"at":18,"kind":"inspect","record":{"schedule":"dual"}}
